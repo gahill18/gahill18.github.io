@@ -1,14 +1,18 @@
 #+title: Optimal Posting Strategies on Reddit
 #+author: Garrett Hill
 
-* Header 1
+* Introduction
 
   FOSS4EVER
 
-** Header 2
+  Garrett Wuz Here
 
-   Garrett Wuz Here
+** Subheader
 
-*** Header 3
+   (Please come back when the cmsc320 project you are looking for is due)
 
-    (Please come back when the cmsc320 project you are looking for is due)
+* Resources
+
+  - [[https://github.com/gahill18/gahill18.github.io][This website's source code]]
+  - [[https://www.reddit.com/r/dataisbeautiful/comments/uixbu8/average_post_score_by_posting_hour_oc/][Similar project]]
+  - [[Reddit Api][https://github.com/reddit-archive/reddit/wiki/API]]
