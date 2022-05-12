@@ -1,4 +1,8 @@
-#+title: Optimal Posting Strategies on Reddit
-#+author: Garrett Hill
+#+OPTIONS: toc:nil
+#+OPTIONS: num:nil
+
+#+TITLE: Optimal Posting Strategies on Reddit
+#+AUTHOR: Garrett Hill
+#+AUTHOR: gahill2018@protonmail.com
 
 * This is a README!
