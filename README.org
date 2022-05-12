@@ -1,0 +1,4 @@
+#+title: Optimal Posting Strategies on Reddit
+#+author: Garrett Hill
+
+* This is a README!
