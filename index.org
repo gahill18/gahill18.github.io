@@ -1,0 +1,14 @@
+#+title: Optimal Posting Strategies on Reddit
+#+author: Garrett Hill
+
+* Header 1
+
+  FOSS4EVER
+
+** Header 2
+
+   Garrett Wuz Here
+
+*** Header 3
+
+    (Please come back when the cmsc320 project you are looking for is due)
