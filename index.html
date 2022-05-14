@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2022-05-12 Thu 15:51 -->
+<!-- 2022-05-13 Fri 20:17 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Optimal Posting Strategies on Reddit</title>
@@ -223,18 +223,22 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgea44516">1. Introduction</a>
-<ul>
-<li><a href="#org25c6545">1.1. Subheader</a></li>
-</ul>
-</li>
-<li><a href="#org2ffc5d9">2. Resources</a></li>
+<li><a href="#org6595054">1. Introduction</a></li>
+<li><a href="#org415b5e2">2. Data Collection/Management</a></li>
+<li><a href="#org1492ec1">3. Exploratory Data Analysis</a></li>
+<li><a href="#org09ed659">4. Data Visualization</a></li>
+<li><a href="#org5d74511">5. Hypothesis Testing</a></li>
+<li><a href="#orga9a9af9">6. Insights</a></li>
+<li><a href="#org2dc38db">7. Resources</a></li>
 </ul>
 </div>
 </div>
+<p>
+Designed and Written by Garrett Hill
+</p>
 
-<div id="outline-container-orgea44516" class="outline-2">
-<h2 id="orgea44516"><span class="section-number-2">1</span> Introduction</h2>
+<div id="outline-container-org6595054" class="outline-2">
+<h2 id="org6595054"><span class="section-number-2">1</span> Introduction</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 FOSS4EVER
@@ -244,20 +248,140 @@ FOSS4EVER
 Garrett Wuz Here
 </p>
 </div>
-
-<div id="outline-container-org25c6545" class="outline-3">
-<h3 id="org25c6545"><span class="section-number-3">1.1</span> Subheader</h3>
-<div class="outline-text-3" id="text-1-1">
-<p>
-(Please come back when the cmsc320 project you are looking for is due)
-</p>
-</div>
-</div>
 </div>
 
-<div id="outline-container-org2ffc5d9" class="outline-2">
-<h2 id="org2ffc5d9"><span class="section-number-2">2</span> Resources</h2>
+<div id="outline-container-org415b5e2" class="outline-2">
+<h2 id="org415b5e2"><span class="section-number-2">2</span> Data Collection/Management</h2>
 <div class="outline-text-2" id="text-2">
+<div class="org-src-container">
+<pre class="src src-rust">
+/* MAIN.RS
+
+If you use this code, please credit Garrett Hill @ gahill18.github.io
+
+*/
+
+extern crate reqwest;
+
+use std::env;
+use std::io::Write;
+use std::fs::{File,remove_file};
+
+use reqwest::blocking::{Response,Client};
+use reqwest::{Error,StatusCode};
+
+use serde::{Serialize, Deserialize};
+
+// Ignore these top 3 structs, they're just wrappers for the posts
+#[derive(Debug, Serialize, Deserialize)]
+struct Listing {
+    kind: String,
+    data: ListingData
+}
+
+#[derive(Debug, Serialize, Deserialize)]
+struct ListingData {
+    children: Vec&lt;Child&gt;,
+}
+
+#[derive(Debug, Serialize, Deserialize)]
+struct Child {
+    kind: String,
+    data: Post
+}
+
+// THIS IS THE STRUCT WE ACTUALLY CARE ABOUT
+#[derive(Debug, Serialize, Deserialize)]
+struct Post {
+    id:    String,
+    title: String,
+    created_utc: f64,
+    score: i32,
+    num_comments: i32,
+    total_awards_received: i32
+    // Additional fields go here
+}
+
+// Gets the top posts of the month for the given sub
+fn get_top_for_sub(client: &amp;Client, sub: &amp;str) -&gt; Result&lt;Response, Error&gt; {
+    // Format the request string
+    let get_str =
+	format!("https://old.reddit.com/r/{}/top/.json?t=all&amp;?sort=top&amp;t=month", sub);
+
+    // Get the response from reddit
+    let response = client.get(get_str)
+	.send()?;
+
+    // Make sure the request succeeded
+    if response.status() != StatusCode::OK {
+	println!("Did not recieve Status 200 OK");
+	panic!() // Probably needs better error handling but not necessary right now
+    }
+
+    // If you've made it this far, nothing left to do
+    Ok(response)
+}
+
+// Core logic
+fn main() -&gt;  Result&lt;(), Error&gt; {
+    // Environment variables execution location, subreddit, path to storefile
+    let args: Vec&lt;String&gt; = env::args().collect();
+    assert_eq!(args.len(), 3);
+
+    // Get the top listings for the given subreddit
+    let client = Client::new();
+    let sub    = &amp;args[1];
+    let res    = get_top_for_sub(&amp;client, &amp;sub)?;
+
+    // Parse the response for the appropriate nested fields
+    let listings = res.json::&lt;Listing&gt;()?;
+    let posts = listings.data.children;
+
+    // Get the path to store results in from user
+    let path = &amp;args[2];
+    let fp = std::path::Path::new(path);
+
+    // If fp already exists, delete it
+    if fp.exists() {
+	remove_file(fp);
+    }
+
+    let mut file = File::create(fp).expect("create failed");
+
+    // Write children to file
+    for post in posts {
+	let out = format!("{:?}",post);
+	file.write_all(out.as_bytes());
+    }
+
+    // If you've made it this far, nothing left to do
+    Ok(())
+}
+
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org1492ec1" class="outline-2">
+<h2 id="org1492ec1"><span class="section-number-2">3</span> Exploratory Data Analysis</h2>
+</div>
+
+<div id="outline-container-org09ed659" class="outline-2">
+<h2 id="org09ed659"><span class="section-number-2">4</span> Data Visualization</h2>
+</div>
+
+<div id="outline-container-org5d74511" class="outline-2">
+<h2 id="org5d74511"><span class="section-number-2">5</span> Hypothesis Testing</h2>
+</div>
+
+<div id="outline-container-orga9a9af9" class="outline-2">
+<h2 id="orga9a9af9"><span class="section-number-2">6</span> Insights</h2>
+</div>
+
+<div id="outline-container-org2dc38db" class="outline-2">
+<h2 id="org2dc38db"><span class="section-number-2">7</span> Resources</h2>
+<div class="outline-text-2" id="text-7">
 <ul class="org-ul">
 <li><a href="https://github.com/gahill18/gahill18.github.io">This website's source code</a></li>
 <li><a href="https://www.reddit.com/r/dataisbeautiful/comments/uixbu8/average_post_score_by_posting_hour_oc/">Similar project</a></li>
@@ -268,7 +392,7 @@ Garrett Wuz Here
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Garrett Hill</p>
-<p class="date">Created: 2022-05-12 Thu 15:51</p>
+<p class="date">Created: 2022-05-13 Fri 20:17</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

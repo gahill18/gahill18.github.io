@@ -15,6 +15,7 @@ use reqwest::{Error,StatusCode};
 
 use serde::{Serialize, Deserialize};
 
+// Ignore these top 3 structs, they're just wrappers for the posts
 #[derive(Debug, Serialize, Deserialize)]
 struct Listing {
     kind: String,
@@ -41,10 +42,10 @@ struct Post {
     score: i32,
     num_comments: i32,
     total_awards_received: i32
-    
+    // Additional fields go here
 }
 
-// Gets the top posts of all time for the given sub
+// Gets the top posts of the month for the given sub
 fn get_top_for_sub(client: &Client, sub: &str) -> Result<Response, Error> {
     // Format the request string
     let get_str =
@@ -57,13 +58,14 @@ fn get_top_for_sub(client: &Client, sub: &str) -> Result<Response, Error> {
     // Make sure the request succeeded
     if response.status() != StatusCode::OK {
 	println!("Did not recieve Status 200 OK");
-	panic!() // Needs better error handling but not necessary right now
+	panic!() // Probably needs better error handling but not necessary right now
     }
 
     // If you've made it this far, nothing left to do
     Ok(response)
 }
 
+// Core logic
 fn main() ->  Result<(), Error> {
     // Environment variables execution location, subreddit, path to storefile
     let args: Vec<String> = env::args().collect();
