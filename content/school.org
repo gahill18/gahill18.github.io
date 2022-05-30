@@ -1,7 +1,8 @@
 #+OPTIONS: toc:nil
 
-* Testing School Project Header
+* Optimal Posting Strategies on Reddit (Spring 2022 CMSC320)
 
-  - Optimal Posting Strategies on Reddit (Spring 2022 CMSC320)
-  - Targeted Property Based Testing in Haskell (Spring 2022 CMSC488b)
-  - Lyric Analysis via Genius in Rust (Group project, Fall 2021 CMSC388z)
+* Targeted Property Based Testing in Haskell (Spring 2022 CMSC488b)
+
+* Lyric Analysis via Genius in Rust (Group project, Fall 2021 CMSC388z)
+
