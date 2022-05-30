@@ -3,4 +3,4 @@
 
 | [[file:index.org][Home]] | [[file:activism.org][Activism Projects]] | [[file:school.org][School Projects]] | [[file:work.org][Work Projects]] |
 
-** Desktop Dot Files
+** TODO Desktop Dot Files

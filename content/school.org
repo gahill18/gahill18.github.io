@@ -3,9 +3,9 @@
 
 | [[file:index.org][Home]] | [[file:personal.org][Personal Projects]] | [[file:activism.org][Activism Projects]] | [[file:work.org][Work Projects]] |
 
-** Optimal Posting Strategies on Reddit (Spring 2022 CMSC320)
+** TODO Optimal Posting Strategies on Reddit (Spring 2022 CMSC320)
 
-** Targeted Property Based Testing in Haskell (Spring 2022 CMSC488b)
+** TODO Targeted Property Based Testing in Haskell (Spring 2022 CMSC488b)
 
-** Lyric Analysis via Genius in Rust (Group project, Fall 2021 CMSC388z)
+** TODO Lyric Analysis via Genius in Rust (Group project, Fall 2021 CMSC388z)
 

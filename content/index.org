@@ -15,9 +15,9 @@
 
 ** [[file:school.org][School Projects]]
 
-  - Optimal Posting Strategies on Reddit (Spring 2022 CMSC320)
-  - Targeted Property Based Testing in Haskell (Spring 2022 CMSC488b)
-  - Lyric Analysis via Genius in Rust (Group project, Fall 2021 CMSC388z)
+  - Optimal Posting Strategies on Reddit 
+  - Targeted Property Based Testing in Haskell
+  - Lyric Analysis via Genius in Rust
 
 ** [[file:work.org][Work Projects]]
 
@@ -26,3 +26,5 @@
   - [[https://github.com/gahill18/gahill18.github.io][This website's source code]]
 
 ** About Me
+
+   I am a current graduate student at the University of Maryland getting my M.E. in Cybersecurity. I'm interested in programming language design, automation of work, and all kinds of other things! You can contact me at [[mailto:gahill2018@pm.me][gahill2018@pm.me]], or check out my github [[https://github.com/gahill18][here]].
