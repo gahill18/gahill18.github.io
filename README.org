@@ -1,7 +1,4 @@
 #+OPTIONS: toc:nil
 #+OPTIONS: num:nil
 
-* DEAD BRANCH NOTICE
-
-  This branch is an archive of my CMSC320 project. It is not maintained.
-  
+* Repo Title
