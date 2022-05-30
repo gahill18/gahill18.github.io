@@ -1,3 +1,17 @@
 #+OPTIONS: num:nil
+#+AUTHOR: Garrett Hill
+#+EMAIL: gahill2018@pm.me
+#+TITLE: Under Construction
 
-* Index Header
+* TODO Personal Projects
+
+* TODO Work Projects
+
+* TODO School Projects
+
+* Links and Resources
+
+  - [[https://github.com/gahill18/gahill18.github.io][This website's source code]]
+  - filler
+
+
