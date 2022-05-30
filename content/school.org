@@ -1,4 +1,5 @@
 #+OPTIONS: toc:nil
+#+TITLE: School Projects
 
 | [[file:index.org][Home]] | [[file:personal.org][Personal Projects]] | [[file:activism.org][Activism Projects]] | [[file:work.org][Work Projects]] |
 
