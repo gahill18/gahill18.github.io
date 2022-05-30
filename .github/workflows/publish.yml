@@ -12,7 +12,7 @@ jobs:
       - name: Check out
         uses: actions/checkout@v1
 
-      - name: Install Emacs
+      - name: Install Emacs Nox (no-gui)
         run: sudo apt install emacs-nox --yes
 
       - name: Build the site
