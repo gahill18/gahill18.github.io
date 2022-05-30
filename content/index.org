@@ -1,9 +1,7 @@
 #+OPTIONS: num:nil
 #+AUTHOR: Garrett Hill
 #+EMAIL: gahill2018@pm.me
-#+TITLE: INDEV: Garrett Hill's Website
-
-/[[file:README.org][Website README]]/
+#+TITLE: Garrett Hill at a Glance
 
 * TODO Personal Projects
 
@@ -24,6 +22,5 @@
 * Links and Resources
 
   - [[https://github.com/gahill18/gahill18.github.io][This website's source code]]
-  - 
 
-
+* About Me
