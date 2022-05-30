@@ -1,7 +1,7 @@
 #+OPTIONS: toc:nil
 #+OPTIONS: num:nil
 
-* TODO My Home Page
+* My Home Page
 
   This website serves as a collection of my past finished work (in whatever stage they were finished). Any code stored in this repository can be used for non-commercial purposes as long as you cite this repository.
 

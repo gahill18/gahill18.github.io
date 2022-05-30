@@ -3,6 +3,8 @@
 #+EMAIL: gahill2018@pm.me
 #+TITLE: INDEV: Garrett Hill's Website
 
+/[[file:README.org][Website README]]/
+
 * TODO Personal Projects
 
   - Desktop dotfiles
@@ -22,6 +24,6 @@
 * Links and Resources
 
   - [[https://github.com/gahill18/gahill18.github.io][This website's source code]]
-  - filler
+  - 
 
 
