@@ -1,4 +1,7 @@
 #+OPTIONS: toc:nil
 #+OPTIONS: num:nil
 
-* This is a README!
+* DEAD BRANCH NOTICE
+
+  This branch is an archive of my CMSC320 project. It is not maintained.
+  
