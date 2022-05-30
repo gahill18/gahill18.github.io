@@ -1,6 +1,6 @@
-#+OPTIONS: toc:nil
+#+OPTIONS: num:nil toc:nil
 #+TITLE: Personal Projects
 
 | [[file:index.org][Home]] | [[file:activism.org][Activism Projects]] | [[file:school.org][School Projects]] | [[file:work.org][Work Projects]] |
 
-* Desktop Dot Files
+** Desktop Dot Files
