@@ -1,4 +1,4 @@
-#+OPTIONS: num:nil toc:nil
+#+OPTIONS: toc:nil, num:nil
 #+AUTHOR: Garrett Hill
 #+EMAIL: gahill2018@pm.me
 #+TITLE: Garrett Hill at a Glance
