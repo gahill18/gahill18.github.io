@@ -1,3 +1,5 @@
 #+OPTIONS: toc:nil
 
+| [[file:index.org][Home]] | [[file:personal.org][Personal Projects]] | [[file:school.org][School Projects]] | [[file:work.org][Work Projects]] |
+
 * Ruben Amaya for Baltimore County District 10 Campaign
