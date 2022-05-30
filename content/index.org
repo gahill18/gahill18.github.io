@@ -3,13 +3,6 @@
 #+EMAIL: gahill2018@pm.me
 #+TITLE: Garrett Hill at a Glance
 
-#+BEGIN_SRC python
-
-  def test_func(i):
-	return i
-
-#+END_SRC
-
 * TODO Personal Projects
 
   - Desktop dotfiles
@@ -18,7 +11,7 @@
 
   - Ruben Amaya for Baltimore County District 10 Campaign
 
-* TODO School Projects
+* [[file:school.org][School Projects]]
   
   - Optimal Posting Strategies on Reddit (Spring 2022 CMSC320)
   - Targeted Property Based Testing in Haskell (Spring 2022 CMSC488b)
