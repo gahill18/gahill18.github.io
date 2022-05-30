@@ -3,6 +3,13 @@
 #+EMAIL: gahill2018@pm.me
 #+TITLE: Garrett Hill at a Glance
 
+#+BEGIN_SRC python
+
+  def test_func(i):
+	return i
+
+#+END_SRC
+
 * TODO Personal Projects
 
   - Desktop dotfiles
