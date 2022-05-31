@@ -5,4 +5,5 @@
 
 ** TODO Desktop Dot Files
 
-   [[file:dotfiles/init.el][My Emacs Config]]
+   - [[file:dotfiles/init.el][My Emacs Config]]
+   - [[file:dotfiles/.config/i3/config][My i3 Config]]
