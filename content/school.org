@@ -1,7 +1,7 @@
 #+OPTIONS: toc:nil, num:nil
 #+TITLE: School Projects
 
-| [[file:index.org][Home]] | [[file:personal.org][Personal Projects]] | [[file:activism.org][Activism Projects]] | [[file:work.org][Work Projects]] |
+| [[file:index.org][Home]] | [[file:personal.org][Personal Projects]] | [[file:activism.org][Activism Projects]] | [[file:school.org][School Projects]] | [[file:work.org][Work Projects]] |
 
 ** TODO Optimal Posting Strategies on Reddit (Spring 2022 CMSC320)
 

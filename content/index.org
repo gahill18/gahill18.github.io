@@ -3,23 +3,23 @@
 #+EMAIL: gahill2018@pm.me
 #+TITLE: Garrett Hill at a Glance
 
-| [[file:~/Me/content/personal/personal.org][Personal Projects]] | [[file:~/Me/content/activism/activism.org][Activism Projects]] | [[file:~/Me/content/school/school.org][School Projects]] | [[file:~/Me/content/work/work.org][Work Projects]] |
+| [[file:index.org][Home]] | [[file:personal.org][Personal Projects]] | [[file:activism.org][Activism Projects]] | [[file:school.org][School Projects]] | [[file:work.org][Work Projects]] |
 
-** [[file:personal.org][Personal Projects]]
+** [[file:personal/personal.org][Personal Projects]]
 
   - Desktop dotfiles
 
-** [[file:activism.org][Activism Projects]]
+** [[file:activism/activism.org][Activism Projects]]
 
   - Ruben Amaya for Baltimore County District 10 Campaign
 
-** [[file:school.org][School Projects]]
+** [[file:school/school.org][School Projects]]
 
   - Optimal Posting Strategies on Reddit 
   - Targeted Property Based Testing in Haskell
   - Lyric Analysis via Genius in Rust
 
-** [[file:work.org][Work Projects]]
+** [[file:work/work.org][Work Projects]]
 
 ** Links and Resources
 
