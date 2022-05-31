@@ -26,7 +26,6 @@
              :publishing-function 'org-html-publish-to-html
 	     :with-author nil           ;; Don't include author name
              :with-creator t            ;; Include Emacs and Org versions in footer
-             :with-toc f                ;; Include a table of contents
              :section-numbers nil       ;; Don't include section numbers
              :time-stamp-file nil)))    ;; Don't include time stamp in file
 
