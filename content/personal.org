@@ -3,7 +3,24 @@
 
 | [[file:index.org][Home]] | [[file:personal.org][Personal Projects]] | [[file:activism.org][Activism Projects]] | [[file:school.org][School Projects]] | [[file:work.org][Work Projects]] | 
 
-** TODO Desktop Dot Files
+** My Dotfiles
 
-   - [[https://github.com/gahill18/gahill18.github.io/blob/main/content/dotfiles/.config/i3/config][My Emacs Config]]
+   - [[https://github.com/gahill18/gahill18.github.io/blob/main/content/dotfiles/.emacs.d/init.el][My Emacs Config]]
    - [[https://github.com/gahill18/gahill18.github.io/blob/main/content/dotfiles/.config/i3/config][My i3 Config]]
+
+
+** Actual Projects
+   
+   #+BEGIN_SRC python
+
+     # TODO: My Python here!
+     print("Hello world!")
+
+   #+END_SRC
+
+   #+BEGIN_SRC rust
+
+     // TODO: My rust here
+     println!("Hello World!")
+
+   #+END_SRC
