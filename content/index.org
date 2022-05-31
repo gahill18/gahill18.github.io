@@ -5,26 +5,10 @@
 
 | [[file:index.org][Home]] | [[file:personal.org][Personal Projects]] | [[file:activism.org][Activism Projects]] | [[file:school.org][School Projects]] | [[file:work.org][Work Projects]] |
 
-** [[file:personal/personal.org][Personal Projects]]
+** About Me
 
-  - Desktop dotfiles
-
-** [[file:activism/activism.org][Activism Projects]]
-
-  - Ruben Amaya for Baltimore County District 10 Campaign
-
-** [[file:school/school.org][School Projects]]
-
-  - Optimal Posting Strategies on Reddit 
-  - Targeted Property Based Testing in Haskell
-  - Lyric Analysis via Genius in Rust
-
-** [[file:work/work.org][Work Projects]]
+   I am a current graduate student at the University of Maryland getting my M.E. in Cybersecurity. I'm interested in programming language design, automation of work, and all kinds of other things! You can contact me at [[mailto:gahill2018@pm.me][gahill2018@pm.me]], or check out my github [[https://github.com/gahill18][here]].
 
 ** Links and Resources
 
   - [[https://github.com/gahill18/gahill18.github.io][This website's source code]]
-
-** About Me
-
-   I am a current graduate student at the University of Maryland getting my M.E. in Cybersecurity. I'm interested in programming language design, automation of work, and all kinds of other things! You can contact me at [[mailto:gahill2018@pm.me][gahill2018@pm.me]], or check out my github [[https://github.com/gahill18][here]].
