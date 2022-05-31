@@ -3,7 +3,7 @@
 #+EMAIL: gahill2018@pm.me
 #+TITLE: Garrett Hill at a Glance
 
-| [[file:personal/personal.org][Personal Projects]] | [[file:activism/activism.org][Activism Projects]] | [[file:school/school.org][School Projects]] | [[file:work/work.org][Work Projects]] |
+| [[file:~/Me/content/personal/personal.org][Personal Projects]] | [[file:~/Me/content/activism/activism.org][Activism Projects]] | [[file:~/Me/content/school/school.org][School Projects]] | [[file:~/Me/content/work/work.org][Work Projects]] |
 
 ** [[file:personal.org][Personal Projects]]
 
