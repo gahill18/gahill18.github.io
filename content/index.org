@@ -9,6 +9,10 @@
 
    I am a current graduate student at the University of Maryland getting my M.E. in Cybersecurity. I'm interested in programming language design, automation of work, and all kinds of other things! You can contact me at [[mailto:gahill2018@pm.me][gahill2018@pm.me]], or check out my github [[https://github.com/gahill18][here]].
 
+** About This Website
+
+   This website serves as a place for me to display my projects that I am proud of, or projects that I think would be useful to others.
+
 ** Links and Resources
 
   - [[https://github.com/gahill18/gahill18.github.io][This website's source code]]

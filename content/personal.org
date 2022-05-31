@@ -24,3 +24,10 @@
      println!("Hello World!")
 
    #+END_SRC
+
+   #+BEGIN_SRC haskell
+
+     -- TODO: My haskell here
+     putStrLn("Hello world!")
+
+   #+END_SRC
