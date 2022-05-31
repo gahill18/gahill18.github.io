@@ -1,0 +1,8 @@
+#+OPTIONS: toc:nil, num:nil
+#+TITLE: Personal Projects
+
+| [[file:~/Me/content/home/index.org][Home]] | [[file:~/Me/content/activism/activism.org][Activism Projects]] | [[file:~/Me/content/school/school.org][School Projects]] | [[file:~/Me/content/work/work.org][Work Projects]] |
+
+** TODO Desktop Dot Files
+
+   [[file:dotfiles/init.el][My Emacs Config]]

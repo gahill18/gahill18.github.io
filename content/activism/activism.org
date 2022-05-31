@@ -1,0 +1,6 @@
+#+OPTIONS: toc:nil, num:nil
+#+TITLE: Activism Projects
+
+| [[file:~/Me/content/home/index.org][Home]] | [[file:personal.org][Personal Projects]] | [[file:~/Me/content/school/school.org][School Projects]] | [[file:~/Me/content/work/work.org][Work Projects]] |
+
+** TODO Ruben Amaya for Baltimore County District 10 Campaign
