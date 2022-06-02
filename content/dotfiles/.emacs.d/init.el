@@ -1,7 +1,5 @@
 ;; --------------- CORE FUNCTIONALITY ---------------
 
-(add-hook 'emacs-lisp-mode-hook 'flycheck-mode)
-
 ;; Flash when emacs is angry
 (setq visible-bell t)
 
@@ -27,11 +25,10 @@
 (display-time-mode 1)                  ; Display Clock
 
 (setq inhibit-startup-message t)       ; No startup message
-(setq initial-buffer-choice "~/.emacs.d/")      ; Open init on startup
 
 (setq auto-save-default nil)           ; Disable autosave
 (setq create-lockfiles nil)            ; Disable lockfiles
-
+ 
 
 ;; Initialize package sources
 (require 'package)
@@ -61,7 +58,10 @@
 (global-set-key (kbd "C-M-j") 'counsel-switch-buffer)   ; Ctrl-Alt-j to switch buffer
 (global-set-key (kbd "C-M-k") 'kill-this-buffer)        ; Ctrl-Alt-k to kill buffer
 (global-set-key (kbd "C-M-;") 'revert-buffer-no-confirm) ; Reload buffer
+(global-set-key (kbd "C-M-o") 'org-agenda) ; Open the agenda
+(global-set-key (kbd "s-r") 'browse-kill-ring) ; See past cuts/copies
 
+; Resize windows with arrows
 (global-set-key (kbd "C-M-<left>") 'shrink-window-horizontally)
 (global-set-key (kbd "C-M-<right>") 'enlarge-window-horizontally)
 (global-set-key (kbd "C-M-<down>") 'shrink-window)
@@ -73,8 +73,6 @@
 (global-set-key (kbd "C-c k")    'windmove-up)
 (global-set-key (kbd "C-c l")  'windmove-down)
 
-(global-set-key (kbd "s-r") 'browse-kill-ring) ; See past cuts/copies
-
 ;; -------- FUNCTIONAL PACKAGES --------------
 
 ;; Multiple cursor functionality
@@ -82,21 +80,17 @@
 (use-package multiple-cursors)
 
 ;; Undo management
-(use-package undo-tree)
-(global-undo-tree-mode)
-
+(use-package undo-tree
+   :bind ("C-M-/" . undo-tree-visualize))
+(global-undo-tree-mode t)
+ 
 ;; Killring management
-(use-package popup-kill-ring)
 (use-package browse-kill-ring
-  :bind ("C-M-/" . browse-kill-ring))
-
-;; Emacs startup screen
-(use-package dashboard
-  :config
-  (dashboard-setup-startup-hook))
-
+   :bind ("C-M-y" . browse-kill-ring))
+ 
 ;; Git packages
-(use-package magit)
+(use-package magit
+  :defer t)
 
 ;; Docker packages
 (use-package docker
@@ -104,41 +98,46 @@
 
 ;; Syntax checker and debugger
 (use-package flycheck
-  :hook prog-mode)
+  :hook (prog-mode . flycheck-mode))
 ;; Flychecks on save
 (setq flycheck-check-syntax-automatically '(mode-enabled save))
 
 ;; Minibuffer auto complete
 (use-package ivy
-  :diminish
-  :config
-  (ivy-mode 1))
-
+   :diminish
+   :config
+   (ivy-mode 1))
+ 
 ;; Gives additional info on M-x commands
 (use-package ivy-rich
-  :init
-  (ivy-rich-mode 1))
-
+   :init
+   (ivy-rich-mode 1))
+ 
 ;; Fuzzy search
 (use-package counsel
-  :bind (("M-x" . counsel-M-x)
-	 ("C-x b" . counsel-ibuffer)
-	 ("C-x C-f" . counsel-find-file)
-	 :map minibuffer-local-map
-	 ("C-r" . 'counsel-minibuffer-history))
-  :config
-  (setq ivy-initial-inputs-alist nil)) ; Get rid of ^ from searches
-
+   :bind (("M-x" . counsel-M-x)
+ 	 ("C-x b" . counsel-ibuffer)
+ 	 ("C-x C-f" . counsel-find-file)
+ 	 :map minibuffer-local-map
+ 	 ("C-r" . 'counsel-minibuffer-history))
+   :config
+   (setq ivy-initial-inputs-alist nil)) ; Get rid of ^ from searches
+ 
+;; Text completion
+(use-package company
+   :bind (("C-c c" . company-complete)))
+(add-hook 'after-init-hook 'global-company-mode)
+ 
 (use-package helpful
-  :custom
-  (counsel-describe-function-function #'helpful-callable)
-  (counsel-describe-variable-function #'helpful-variable)
-  :bind
-  ([remap describe-function] . counsel-describe-function)
-  ([remap describe-command] . helpful-command)
-  ([remap describe-variable] . counsel-describe-variable)
-  ([remap describe-key] . helpful-key))
-
+   :custom
+   (counsel-describe-function-function #'helpful-callable)
+   (counsel-describe-variable-function #'helpful-variable)
+   :bind
+   ([remap describe-function] . counsel-describe-function)
+   ([remap describe-command] . helpful-command)
+   ([remap describe-variable] . counsel-describe-variable)
+   ([remap describe-key] . helpful-key))
+ 
 ;; Tells what options are available under keybindings
 (use-package which-key
   :init (which-key-mode)
@@ -148,7 +147,13 @@
 
 
 ;; ------------ AESTHETIC PACKAGES --------------------
-
+ 
+;; Emacs startup screen
+(setq org-agenda-files '("~/org/agenda.org"))
+(use-package dashboard
+  :config
+  (dashboard-setup-startup-hook))
+ 
 ;; Display indent guidelines
 (use-package indent-guide
   :hook (prog-mode . indent-guide-mode))
@@ -160,11 +165,11 @@
   :hook prog-mode)
 
 ;; Better icons for modeline
-(use-package all-the-icons)
+(use-package all-the-icons
+  :defer t)
 
 ;; Improved modeline
 (use-package doom-modeline
-  :ensure t
   :init
   (doom-modeline-mode 1)
   :custom
@@ -178,62 +183,64 @@
 	doom-modeline-enable-word-count t)
   (load-theme 'doom-gruvbox t)
   )
-
-;; Match desktop theme with emacs theme
-(use-package theme-magic)
-
-;; ------------ LANGUAGE PACKAGES --------------------
-
+;; 
+;; ;; Match desktop theme with emacs theme
+;; (use-package theme-magic
+;;   :bind ("C-M-t" . theme-magic-from-emacs))
+;; 
+;; ;; ------------ LANGUAGE PACKAGES --------------------
+;; 
 ;; IDE for emacs
-(use-package lsp-mode
-  :hook prog-mode
-  :commands (lsp lsp-deferred)
-  :init
-  (setq lsp-keymap-prefix "C-c l")
-  :config
-  (lsp-enable-which-key-integration t))
-(use-package lsp-ui
-  :hook (lsp-mode . lsp-ui-mode)
-  :custom
-  (lsp-ui-doc-position 'bottom))
-(use-package eglot
-  :hook (lsp-mode))
+;; (use-package lsp-mode
+;;   :hook prog-mode
+;;   :commands (lsp lsp-deferred)
+;;   :init
+;;   (setq lsp-keymap-prefix "C-c l")
+;;   :config
+;;   (lsp-enable-which-key-integration t))
+;; (use-package lsp-ui
+;;   :hook (lsp-mode . lsp-ui-mode)
+;;   :custom
+;;   (lsp-ui-doc-position 'bottom))
+;; (use-package eglot
+;;   :hook (lsp-mode . eglot))
 
 ;; Haskell Packages
 (use-package haskell-mode
   :hook lsp-deferred
   :bind ("C-c C-z" . 'haskell-process-load-file))
-(use-package flycheck-haskell
-  :after haskell-mode)
-(use-package lsp-haskell
-  :after haskell-mode)
+; (use-package flycheck-haskell
+;   :after haskell-mode)
+; (use-package lsp-haskell
+;   :after haskell-mode)
 
 ;; Rust packages
 (use-package rust-mode
   :hook lsp-deferred)
 (use-package cargo-mode
   :hook rust-mode)
-(use-package flycheck-rust
-  :hook rust-mode)
+;; (use-package flycheck-rust
+;;   :hook (rust-mode . flycheck-rust))
+;; (use-package racer
+;;   :hook (rust-mode . racer-mode))
 
 ;; Better pdf interaction
 (use-package pdf-tools
-  :mode "\\.pdf\\'")
-(pdf-tools-install)
+  :hook (pdf-view-mode . pdf-tools-enable-minor-modes))
 
 ;; ------------ ORG MODE ------------
 
-(add-hook 'org-mode-hook ; Export org
-	  (lambda () (local-set-key (kbd "C-M-e") 'org-export-dispatch)))
-
-(add-hook 'org-mode-hook ; Spell check the line
-	  (lambda () (local-set-key (kbd "C-M-f") 'flyspell-check-previous-highlighted-word)))
-
-(add-hook 'org-mode-hook 'flyspell-mode) ; Start flyspell mode
+(add-hook 'org-mode-hook (lambda () (local-set-key (kbd "C-M-f") 'flyspell-check-previous-highlighted-word)))
+(add-hook 'org-mode-hook (lambda () (local-set-key (kbd "C-M-e") 'org-export-dispatch)))
+(add-hook 'org-mode-hook flyspell-mode)
 
 ;; ------------ HACKS AND MISC IMPROVEMENTS --------------------
 
-(use-package restart-emacs)
+(use-package selectric-mode
+  :bind ("C-s-s" . 'selectric-mode))
+
+(use-package restart-emacs
+  :bind ("C-M-r" . 'restart-emacs))
 
 ;; Tell Custom to piss off and stop changing things
 (setq custom-file "~/.emacs.d/custom.el")
@@ -243,3 +250,12 @@
     "Revert buffer without confirmation."
     (interactive)
     (revert-buffer :ignore-auto :noconfirm))
+
+; (defun startup-frame ()
+;   "Open the buffers I want on startup"
+;   (split-window-right)
+;   (other-window 1)
+;   (split-window-below)
+;   (other-window -1))
+
+; (startup-frame)                                 ; Startup frame management
