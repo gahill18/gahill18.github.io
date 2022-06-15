@@ -50,6 +50,13 @@
 
 ;; --------------- KEYBINDS ------------------
 
+;; So we don't have to change every function definition if we want to remap
+;; keys later on
+(setq movement-key-up "p")
+(setq movement-key-down "n")
+(setq movement-key-left "b")
+(setq movement-key-right "f")
+
 (when (fboundp 'windmove-default-keybindings)
   (windmove-default-keybindings))
 
@@ -67,11 +74,11 @@
 (global-set-key (kbd "C-M-<down>") 'shrink-window)
 (global-set-key (kbd "C-M-<up>") 'enlarge-window)
 
-; Switch windows with arrows
-(global-set-key (kbd "C-c j")  'windmove-left)
-(global-set-key (kbd "C-c ;") 'windmove-right)
-(global-set-key (kbd "C-c k")    'windmove-up)
-(global-set-key (kbd "C-c l")  'windmove-down)
+; Switch windows with movement keys
+(global-set-key (kbd (concat "C-c " movement-key-left))  'windmove-left)
+(global-set-key (kbd (concat "C-c " movement-key-right)) 'windmove-right)
+(global-set-key (kbd (concat "C-c " movement-key-up))    'windmove-up)
+(global-set-key (kbd (concat "C-c " movement-key-down))  'windmove-down)
 
 ;; -------- FUNCTIONAL PACKAGES --------------
 
@@ -207,7 +214,6 @@
 
 ;; Haskell Packages
 (use-package haskell-mode
-  :hook lsp-deferred
   :bind ("C-c C-z" . 'haskell-process-load-file))
 ; (use-package flycheck-haskell
 ;   :after haskell-mode)
@@ -216,9 +222,9 @@
 
 ;; Rust packages
 (use-package rust-mode
-  :hook lsp-deferred)
+  :defer t)
 (use-package cargo-mode
-  :hook rust-mode)
+  :defer t)
 ;; (use-package flycheck-rust
 ;;   :hook (rust-mode . flycheck-rust))
 ;; (use-package racer
@@ -241,6 +247,16 @@
 
 (use-package restart-emacs
   :bind ("C-M-r" . 'restart-emacs))
+
+;; Update packages weekly
+(use-package auto-package-update
+  :custom
+  (auto-package-update-interval 7)
+  (auto-package-update-prompt-before-update t)
+  (auto-package-update-hide-results t)
+  :config
+  (auto-package-update-maybe)
+  (auto-package-update-at-time "09:00"))
 
 ;; Tell Custom to piss off and stop changing things
 (setq custom-file "~/.emacs.d/custom.el")
