@@ -3,4 +3,6 @@
 
 | [[file:index.org][Home]] | [[file:personal.org][Personal Projects]] | [[file:activism.org][Activism Projects]] | [[file:school.org][School Projects]] | [[file:work.org][Work Projects]] |
 
-** TODO Ruben Amaya for Baltimore County District 10 Campaign
+** TODO Ruben Amaya for Baltimore County District 10 Campaign Data Visualization
+
+   - Will be posted once finalized and scrubbed of identifying info
