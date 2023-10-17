@@ -15,10 +15,10 @@ permalink: /resume/
 | Dates Employed |05/2023 – 08/2023 |
 | Salary | $54,080 / year |
 | Hours per week | 40 |
-| Title | *IT Specialist (INFOSEC), GS-2210-07*
-| Supervisor | *Jeremiah “JJ” Glenn (Jeremiah.Glenn@cisa.dhs.gov)* 
-| Ok to contact this supervisor | *Yes* 
-| Duties, Accomplishments and Related Skills | *Assisted ongoing efforts in data mapping new and emerging standards; worked within several intern groups to investigate, analyze, and visualize data sources related to the CISA Automated Indicator Sharing (AIS) service; lead a team of interns to visualize data from the API of CISA’s Threat Intelligence Platform using Python; attended several intern spotlight events with CISA Leadership; was spotlighted on CISA social media and internal mailers*
+| Title | IT Specialist (INFOSEC), GS-2210-07*
+| Supervisor | Jeremiah “JJ” Glenn (Jeremiah.Glenn@cisa.dhs.gov) 
+| Ok to contact this supervisor | Yes 
+| Duties, Accomplishments and Related Skills | Assisted ongoing efforts in data mapping new and emerging standards; worked within several intern groups to investigate, analyze, and visualize data sources related to the CISA Automated Indicator Sharing (AIS) service; lead a team of interns to visualize data from the API of CISA’s Threat Intelligence Platform using Python; attended several intern spotlight events with CISA Leadership; was spotlighted on CISA social media and internal mailers*
 
 
 ### D.H.S. Cybersecurity Division, Threat Hunting
